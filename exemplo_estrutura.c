@@ -5,7 +5,7 @@
 struct pizza {
     int id;
     int preco;
-    char *nome;
+    char nome[30];
 };
 
 struct pizza listapizza1[3];
@@ -58,7 +58,7 @@ int main(){
     struct pizza p1;
     p1.id = 1;
     p1.preco = 50;
-    p1.nome = "Napolitana";
+    strcpy(p1.nome, "Napolitana");
     printPizza(p1);
     listapizza2 = (struct pizza *)malloc(sizeof(p1));
     savePizza1(p1);
@@ -70,5 +70,6 @@ int main(){
     }
     struct pizza p3;
     loadPizza1(&p3,0);
+    printPizza(p3);
     return 0;
 }
