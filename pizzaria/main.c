@@ -19,10 +19,10 @@ int main(){
     printPizza(&p1);
     printf("Exemplo savePizza\n");
     listapizza = (T_PIZZA *)malloc(10*sizeof(p1));
-    savePizza(p1);
+    setPizza(p1);
     
     T_PIZZA p2 = {2,55,"Bolonhesa"};
-    savePizza(p2);
+    setPizza(p2);
     
     printf("Exemplo listagem\n");
     for(int i=0; i <size_listapizza; i++ ){
@@ -31,7 +31,7 @@ int main(){
 
     printf("Exemplo loadPizza\n");
     T_PIZZA p3;
-    loadPizza(&p3,1);
+    getPizza(&p3,1);
     printPizza(&p3);
     return 0;
 }

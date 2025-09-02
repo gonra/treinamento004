@@ -8,7 +8,7 @@ T_PIZZA * listapizza;
 
 int size_listapizza=0;
 
-void setPizza(T_PIZZA p){
+void addPizza(T_PIZZA p){
    listapizza[size_listapizza].id = p.id;
    listapizza[size_listapizza].preco = p.preco;
    strcpy(listapizza[size_listapizza].nome, p.nome);
@@ -22,5 +22,13 @@ void getPizza(T_PIZZA *p, int id){
         (*p).preco = listapizza[id].preco;
         strcpy((*p).nome , listapizza[id].nome);
     }
+    return;
+}
+
+void cleanPizza(){
+    for(int i=0; i <size_listapizza; i++ ){
+        destroyPizza(&listapizza[i]);
+    }
+    size_listapizza = 0;
     return;
 }
